@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.inicio,
       routes: appRoutes,
       theme: mindWellTheme,
       home: Scaffold(
@@ -26,43 +25,43 @@ class MyApp extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/settings');
+                    Navigator.pushNamed(context, Routes.settings);
                   },
                   child: const Text('Settings'),
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/chat');
+                    Navigator.pushNamed(context, Routes.chat);
                   },
                   child: const Text('Chat'),
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/psico_profile');
+                    Navigator.pushNamed(context, Routes.psicoProfile);
                   },
                   child: const Text('Psicologo Profile'),
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/login');
+                    Navigator.pushNamed(context, Routes.login);
                   },
                   child: const Text('Login'),
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/register');
+                    Navigator.pushNamed(context, Routes.register);
                   },
                   child: const Text('Register'),
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/psicoList');
+                    Navigator.pushNamed(context, Routes.psicoList);
                   },
                   child: const Text('Psicologos Disponibles'),
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/information');
+                    Navigator.pushNamed(context, Routes.information);
                   },
                   child: const Text('Information'),
                 ),

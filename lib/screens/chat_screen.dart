@@ -70,7 +70,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     text: 'I am doing great too!',
                   ),
                   _buildChatMessage(
-                      sender: 'John Doe', text: 'Iam going back to 505'),
+                      sender: 'John Doe', text: 'I am going back to 505'),
                   _buildChatMessage(
                       sender: 'John Doe',
                       text: 'But i crumble completely when you cry'),
