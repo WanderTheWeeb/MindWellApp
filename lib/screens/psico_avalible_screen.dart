@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mindwell/routes/routes.dart';
+import 'package:mindwell/widgets/psico_card.dart';
 
 class PsicoAvalibleScreen extends StatelessWidget {
   const PsicoAvalibleScreen({super.key});
@@ -6,49 +8,89 @@ class PsicoAvalibleScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Psicologos Disponibles'),
-        ),
-        body: GridView(
-          padding: const EdgeInsets.all(25),
-          gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 200,
-            childAspectRatio: 3 / 2,
-            crossAxisSpacing: 20,
-            mainAxisSpacing: 20,
+      appBar: AppBar(
+        title: const Text('Psicologos Disponibles'),
+      ),
+      body: GridView.count(
+        mainAxisSpacing: 10,
+        crossAxisSpacing: 10,
+        crossAxisCount: 2,
+        padding: const EdgeInsets.all(15),
+        children: [
+          PsicoCard(
+            name: 'Ana de Armas',
+            pathImage:
+                'https://imgs.search.brave.com/AG-8wPeZsqT_TOoBVNcNHR7sVO9r4kEZTW074WShF60/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9lMDAt/ZWxtdW5kby51ZWNk/bi5lcy9hc3NldHMv/bXVsdGltZWRpYS9p/bWFnZW5lcy8yMDIy/LzA4LzMwLzE2NjE4/ODM1ODQ4MzE5Lmpw/Zw',
+            onPressed: () {
+              Navigator.of(context).pushNamed(Routes.psicoProfile);
+            },
           ),
-          children: [
-            Container(
-              padding: const EdgeInsets.all(8),
-              color: Colors.teal[100],
-              child: const Text("He'd have you all unravel at the"),
-            ),
-            Container(
-              padding: const EdgeInsets.all(8),
-              color: Colors.teal[200],
-              child: const Text('Heed not the rabble'),
-            ),
-            Container(
-              padding: const EdgeInsets.all(8),
-              color: Colors.teal[300],
-              child: const Text('Sound of screams but the'),
-            ),
-            Container(
-              padding: const EdgeInsets.all(8),
-              color: Colors.teal[400],
-              child: const Text('Who scream'),
-            ),
-            Container(
-              padding: const EdgeInsets.all(8),
-              color: Colors.teal[500],
-              child: const Text('Revolution is coming...'),
-            ),
-            Container(
-              padding: const EdgeInsets.all(8),
-              color: Colors.teal[600],
-              child: const Text('Revolution, they...'),
-            ),
-          ],
-        ));
+          PsicoCard(
+            name: 'John Doe',
+            pathImage:
+                'https://imgs.search.brave.com/AG-8wPeZsqT_TOoBVNcNHR7sVO9r4kEZTW074WShF60/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9lMDAt/ZWxtdW5kby51ZWNk/bi5lcy9hc3NldHMv/bXVsdGltZWRpYS9p/bWFnZW5lcy8yMDIy/LzA4LzMwLzE2NjE4/ODM1ODQ4MzE5Lmpw/Zw',
+            onPressed: () {
+              Navigator.of(context).pushNamed(Routes.psicoProfile);
+            },
+          ),
+          PsicoCard(
+            name: 'Jane Doe',
+            pathImage:
+                'https://imgs.search.brave.com/AG-8wPeZsqT_TOoBVNcNHR7sVO9r4kEZTW074WShF60/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9lMDAt/ZWxtdW5kby51ZWNk/bi5lcy9hc3NldHMv/bXVsdGltZWRpYS9p/bWFnZW5lcy8yMDIy/LzA4LzMwLzE2NjE4/ODM1ODQ4MzE5Lmpw/Zw',
+            onPressed: () {
+              Navigator.of(context).pushNamed(Routes.psicoProfile);
+            },
+          ),
+          PsicoCard(
+            name: 'Ana de Armas',
+            pathImage:
+                'https://imgs.search.brave.com/AG-8wPeZsqT_TOoBVNcNHR7sVO9r4kEZTW074WShF60/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9lMDAt/ZWxtdW5kby51ZWNk/bi5lcy9hc3NldHMv/bXVsdGltZWRpYS9p/bWFnZW5lcy8yMDIy/LzA4LzMwLzE2NjE4/ODM1ODQ4MzE5Lmpw/Zw',
+            onPressed: () {
+              Navigator.of(context).pushNamed(Routes.psicoProfile);
+            },
+          ),
+          PsicoCard(
+            name: 'John Doe',
+            pathImage:
+                'https://imgs.search.brave.com/AG-8wPeZsqT_TOoBVNcNHR7sVO9r4kEZTW074WShF60/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9lMDAt/ZWxtdW5kby51ZWNk/bi5lcy9hc3NldHMv/bXVsdGltZWRpYS9p/bWFnZW5lcy8yMDIy/LzA4LzMwLzE2NjE4/ODM1ODQ4MzE5Lmpw/Zw',
+            onPressed: () {
+              Navigator.of(context).pushNamed(Routes.psicoProfile);
+            },
+          ),
+          PsicoCard(
+            name: 'Jane Doe',
+            pathImage:
+                'https://imgs.search.brave.com/AG-8wPeZsqT_TOoBVNcNHR7sVO9r4kEZTW074WShF60/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9lMDAt/ZWxtdW5kby51ZWNk/bi5lcy9hc3NldHMv/bXVsdGltZWRpYS9p/bWFnZW5lcy8yMDIy/LzA4LzMwLzE2NjE4/ODM1ODQ4MzE5Lmpw/Zw',
+            onPressed: () {
+              Navigator.of(context).pushNamed(Routes.psicoProfile);
+            },
+          ),
+          PsicoCard(
+            name: 'Ana de Armas',
+            pathImage:
+                'https://imgs.search.brave.com/AG-8wPeZsqT_TOoBVNcNHR7sVO9r4kEZTW074WShF60/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9lMDAt/ZWxtdW5kby51ZWNk/bi5lcy9hc3NldHMv/bXVsdGltZWRpYS9p/bWFnZW5lcy8yMDIy/LzA4LzMwLzE2NjE4/ODM1ODQ4MzE5Lmpw/Zw',
+            onPressed: () {
+              Navigator.of(context).pushNamed(Routes.psicoProfile);
+            },
+          ),
+          PsicoCard(
+            name: 'John Doe',
+            pathImage:
+                'https://imgs.search.brave.com/AG-8wPeZsqT_TOoBVNcNHR7sVO9r4kEZTW074WShF60/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9lMDAt/ZWxtdW5kby51ZWNk/bi5lcy9hc3NldHMv/bXVsdGltZWRpYS9p/bWFnZW5lcy8yMDIy/LzA4LzMwLzE2NjE4/ODM1ODQ4MzE5Lmpw/Zw',
+            onPressed: () {
+              Navigator.of(context).pushNamed(Routes.psicoProfile);
+            },
+          ),
+          PsicoCard(
+            name: 'Jane Doe',
+            pathImage:
+                'https://imgs.search.brave.com/AG-8wPeZsqT_TOoBVNcNHR7sVO9r4kEZTW074WShF60/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9lMDAt/ZWxtdW5kby51ZWNk/bi5lcy9hc3NldHMv/bXVsdGltZWRpYS9p/bWFnZW5lcy8yMDIy/LzA4LzMwLzE2NjE4/ODM1ODQ4MzE5Lmpw/Zw',
+            onPressed: () {
+              Navigator.of(context).pushNamed(Routes.psicoProfile);
+            },
+          ),
+        ],
+      ),
+    );
   }
 }

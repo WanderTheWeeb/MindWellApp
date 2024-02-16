@@ -31,14 +31,14 @@ class ImageButton extends StatelessWidget {
         ),
       ),
       child: Stack(
-        children: <Widget>[
+        children: [
           Positioned.fill(
             child: Align(
               alignment: Alignment.bottomCenter,
               child: Container(
                 width: double.infinity,
-                padding: EdgeInsets.all(8.0),
-                color: Colors.black.withOpacity(0.5),
+                padding: const EdgeInsets.all(8.0),
+                color: Colors.black.withOpacity(0.3),
                 child: Text(
                   buttonText,
                   style: const TextStyle(

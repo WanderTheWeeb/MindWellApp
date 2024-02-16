@@ -32,21 +32,6 @@ class InitScreen extends StatelessWidget {
                 },
                 buttonText: 'Hora de yoga',
               ),
-              const SizedBox(height: 20),
-              const Text(
-                '¡Bienvenido a MindWell!',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 20),
-              const Text(
-                '¡Comienza a meditar ahora!',
-                style: TextStyle(
-                  fontSize: 18,
-                ),
-              ),
             ],
           ),
         ));
