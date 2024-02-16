@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mindwell/routes/routes.dart';
 import 'package:mindwell/widgets/psico_card.dart';
 
+import '../utils/strings_name.dart';
+
 class PsicoAvalibleScreen extends StatelessWidget {
   const PsicoAvalibleScreen({super.key});
 
@@ -9,7 +11,7 @@ class PsicoAvalibleScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Psicologos Disponibles'),
+        title: const Text(StringsName.psicoAvalible),
       ),
       body: GridView.count(
         mainAxisSpacing: 10,
