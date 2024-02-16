@@ -11,12 +11,26 @@ class InitScreen extends StatelessWidget {
         appBar: AppBar(
           title: const Text('MindWell'),
           actions: [
-            IconButton(
-              icon: const Icon(Icons.more_vert),
-              onPressed: () {
-                Navigator.of(context).pushNamed(Routes.settings);
+            PopupMenuButton(
+              itemBuilder: (context) => <PopupMenuEntry>[
+                const PopupMenuItem(
+                  value: 'home',
+                  child: Text('Inicio'),
+                ),
+                const PopupMenuItem(
+                  value: 'about',
+                  child: Text('Acerca de'),
+                ),
+                PopupMenuItem(
+                  value: 'contact',
+                  child: Text('Contacto'),
+                ),
+              ],
+              onSelected: (value) {
+                // Navegar a otra pantalla
+                Navigator.pushNamed(context, value);
               },
-            ),
+            )
           ],
         ),
         body: SingleChildScrollView(
