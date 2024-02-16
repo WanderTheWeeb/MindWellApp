@@ -35,4 +35,5 @@ Map<String, WidgetBuilder> appRoutes = {
   '/help': (BuildContext context) => const HelpSettingsScreen(),
   '/chat_list': (BuildContext context) => const ChatRoomList(),
   '/chat_AI': (BuildContext context) => const ChatScreenAI(),
+  '/register': (BuildContext context) => const RegisterScreen(),
 };

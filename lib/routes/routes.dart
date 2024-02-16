@@ -23,4 +23,5 @@ class Routes {
   static const String help = '/help';
   static const String listado = '/list';
   static const String chatAI = '/chat_AI';
+  static const String registrar = '/register';
 }
