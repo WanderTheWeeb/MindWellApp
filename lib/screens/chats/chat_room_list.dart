@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mindwell/routes/routes.dart';
+import 'package:mindwell/utils/theme.dart';
 
 class ChatRoomList extends StatelessWidget {
   const ChatRoomList({super.key});
@@ -9,6 +10,32 @@ class ChatRoomList extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: const Text('Chat Rooms'),
+          actions: [
+            PopupMenuButton<String>(
+              itemBuilder: (context) => <PopupMenuEntry<String>>[
+                const PopupMenuItem<String>(
+                  value: Routes.settings,
+                  child:
+                      Text('Configuración'), // Asignar valor para la navegación
+                ),
+                PopupMenuItem<String>(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text('Cerrar sesión'),
+                      Icon(Icons.logout, color: lightColorScheme.primary),
+                    ],
+                  ), // Asignar valor para la navegación
+                ),
+              ],
+              onSelected: (value) {
+                // Navegar a la ruta correspondiente
+                Navigator.pushNamed(context, value);
+              },
+              offset:
+                  const Offset(0, 40), // Posicionar el menú debajo del icono
+            )
+          ],
         ),
         body: ListView.builder(
           itemCount: 10,
