@@ -10,7 +10,7 @@ class MindWell extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.home,
+      initialRoute: Routes.introduction,
       routes: appRoutes,
       theme: mindWellTheme,
     );
