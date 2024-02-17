@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mindwell/screens/chats/chat_screenAI.dart';
 import 'package:mindwell/screens/chats/chat_screen.dart';
+import 'package:mindwell/screens/dates/schedule_appointment_screen.dart';
 import 'package:mindwell/screens/home_screen.dart';
 import 'package:mindwell/screens/intro/information_screen.dart';
 import 'package:mindwell/screens/login/login_screen.dart';
@@ -33,4 +34,6 @@ Map<String, WidgetBuilder> appRoutes = {
   '/help': (BuildContext context) => const HelpSettingsScreen(),
   '/chat_list': (BuildContext context) => const ChatRoomList(),
   '/chat_AI': (BuildContext context) => const ChatScreenAI(),
+  '/schedule_appointment': (BuildContext context) =>
+      const ScheduleAppointmentScreen(),
 };
