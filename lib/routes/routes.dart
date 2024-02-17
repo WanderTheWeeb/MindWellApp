@@ -1,6 +1,7 @@
 class Routes {
   Routes._();
   static const String home = '/home';
+  static const String introduction = '/introduction';
   static const String inicio = '/inicio';
   static const String splash = '/splash';
   static const String login = '/login';

@@ -14,7 +14,7 @@ class InformationPage extends StatelessWidget {
         length: 3,
         child: Scaffold(
             appBar: AppBar(
-              title: const Text('Acerca de MindWell'),
+              title: const Center(child: Text('Acerca de MindWell')),
               bottom: const TabBar(
                 tabs: [
                   Tab(text: 'Terminos y condiciones'),
