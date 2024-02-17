@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mindwell/routes/routes.dart';
-import 'package:mindwell/utils/theme.dart';
 
 class ChatRoomList extends StatelessWidget {
   const ChatRoomList({super.key});
@@ -18,12 +17,12 @@ class ChatRoomList extends StatelessWidget {
                   child:
                       Text('Configuración'), // Asignar valor para la navegación
                 ),
-                PopupMenuItem<String>(
+                const PopupMenuItem<String>(
+                  value: Routes.login,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text('Cerrar sesión'),
-                      Icon(Icons.logout, color: lightColorScheme.primary),
+                      Text('Iniciar sesión'),
                     ],
                   ), // Asignar valor para la navegación
                 ),
