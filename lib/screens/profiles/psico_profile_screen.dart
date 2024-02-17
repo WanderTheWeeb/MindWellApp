@@ -35,6 +35,14 @@ class PsicoProfileScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
+              const Divider(
+                color: Colors.black,
+                height: 20,
+                thickness: 1,
+                indent: 20,
+                endIndent: 20,
+              ),
+              const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -67,26 +75,6 @@ class PsicoProfileScreen extends StatelessWidget {
                   ),
                   Text(
                     '+55 11 99999-9999',
-                    style: GoogleFonts.poppins(
-                      fontSize: 16,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'CRP:',
-                    style: GoogleFonts.poppins(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  Text(
-                    '123456',
                     style: GoogleFonts.poppins(
                       fontSize: 16,
                       fontWeight: FontWeight.normal,
@@ -213,6 +201,25 @@ class PsicoProfileScreen extends StatelessWidget {
                     ),
                   ),
                 ],
+              ),
+              const SizedBox(height: 20),
+              Text(
+                'Descripción:',
+                style: GoogleFonts.poppins(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              const SizedBox(height: 5),
+              Text(
+                'Soy una psicóloga especializada en terapia cognitivo-conductual. Tengo experiencia en el tratamiento de ansiedad, depresión, estrés y problemas de pareja. Me apasiona ayudar a las personas a mejorar su bienestar emocional y a alcanzar sus metas personales.',
+                style: GoogleFonts.merriweather(
+                  fontSize: 15,
+                  height: 1.5, // Interlineado
+                ),
+                textAlign: TextAlign.justify,
+                maxLines: 5,
+                overflow: TextOverflow.ellipsis,
               ),
               const SizedBox(height: 20),
               ElevatedButton(

@@ -32,7 +32,7 @@ class _RegisterPageState extends State<RegisterPage> {
   void initState() {
     super.initState();
 
-    bool haveNavigated = false;
+    //bool haveNavigated = false;
     // Listen to auth state to redirect user when the user clicks on confirmation link
     /* _authSubscription = supabase.auth.onAuthStateChange.listen((data) {
       final session = data.session;
