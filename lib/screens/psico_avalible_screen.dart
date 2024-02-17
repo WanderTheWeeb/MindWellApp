@@ -18,9 +18,9 @@ class PsicoAvalibleScreen extends StatelessWidget {
         padding: const EdgeInsets.all(15),
         children: [
           PsicoCard(
-            name: 'Ana de Armas',
+            name: 'Mi mamá',
             pathImage:
-                'https://imgs.search.brave.com/AG-8wPeZsqT_TOoBVNcNHR7sVO9r4kEZTW074WShF60/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9lMDAt/ZWxtdW5kby51ZWNk/bi5lcy9hc3NldHMv/bXVsdGltZWRpYS9p/bWFnZW5lcy8yMDIy/LzA4LzMwLzE2NjE4/ODM1ODQ4MzE5Lmpw/Zw',
+                'https://i.pinimg.com/originals/02/4a/76/024a76ee7c877513afab3d5540740a6e.jpg',
             onPressed: () {
               Navigator.of(context).pushNamed(Routes.psicoProfile);
             },
