@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mindwell/utils/theme.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -8,73 +9,80 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Mi perfil'),
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.edit),
-            )
-          ],
+          title: Text(
+            'Perfil',
+            style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
+          ),
         ),
         body: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: lightColorScheme.secondaryContainer,
+            padding: const EdgeInsets.all(20),
+            child: Column(children: [
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  const CircleAvatar(
+                    radius: 100,
+                    backgroundImage: NetworkImage(
+                        'https://imgs.search.brave.com/AG-8wPeZsqT_TOoBVNcNHR7sVO9r4kEZTW074WShF60/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9lMDAt/ZWxtdW5kby51ZWNk/bi5lcy9hc3NldHMv/bXVsdGltZWRpYS9p/bWFnZW5lcy8yMDIy/LzA4LzMwLzE2NjE4/ODM1ODQ4MzE5Lmpw/Zw'),
                   ),
-                  padding: const EdgeInsets.all(16),
-                  child: const Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        CircleAvatar(
-                          radius: 70,
-                          backgroundImage:
-                              AssetImage('assets/images/profile.png'),
-                        ),
-                        SizedBox(height: 16),
-                        Text(
-                          'John Doe',
-                          style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        SizedBox(height: 16),
-                        Text(
-                          'Experto en Mindfulness',
-                        ),
-                      ])),
-              const ListTile(
-                title: Text('Phone'),
-                subtitle: Text('123-456-7890'),
-                trailing: Icon(Icons.phone),
+                  Positioned(
+                    bottom: 10,
+                    right: 10,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: lightColorScheme.primary,
+                        shape: BoxShape.circle,
+                      ),
+                      child: IconButton(
+                        icon:
+                            Icon(Icons.edit, color: lightColorScheme.onPrimary),
+                        onPressed: () {},
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              const ListTile(
-                title: Text('Email'),
-                subtitle: Text('JohnDoe@gmail.com'),
-                trailing: Icon(Icons.email),
+              const SizedBox(height: 20),
+              Text(
+                'Ana de Armas',
+                style: GoogleFonts.poppins(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-              const ListTile(
-                title: Text('Date of Birth'),
-                subtitle: Text('January 1, 1980'),
-                trailing: Icon(Icons.cake),
-              ),
-              const ListTile(
-                title: Text('Contry'),
-                subtitle: Text('United States'),
-                trailing: Icon(Icons.flag),
-              ),
-              const ListTile(
-                title: Text('City'),
-                subtitle: Text('New York'),
-                trailing: Icon(Icons.location_city),
-              ),
-            ],
-          ),
-        ));
+              const SizedBox(height: 10),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                Text(
+                  'Fecha de nacimiento:',
+                  style: GoogleFonts.poppins(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                const Text('01/01/1990')
+              ]),
+              const SizedBox(height: 10),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                Text(
+                  'Email:',
+                  style: GoogleFonts.poppins(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                const Text('AnaDeArmas@gmail.com')
+              ]),
+              const SizedBox(height: 10),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                Text(
+                  'Telefone:',
+                  style: GoogleFonts.poppins(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                const Text('(11) 99999-9999')
+              ]),
+            ])));
   }
 }

@@ -23,6 +23,16 @@ class _ChatScreenState extends State<ChatScreenAI> {
   final gemini = GoogleGemini(
     apiKey: apiKey,
   );
+  @override
+  void initState() {
+    super.initState();
+    // Mostrar mensaje de bienvenida al cargar la pantalla
+    setState(() {
+      loading = true;
+      // Mostrar el ícono de carga solo cuando se esté cargando el mensaje de bienvenida
+    });
+    showWelcomeMessage();
+  }
 
   // Text only input
   void fromText({required String query}) {
@@ -53,6 +63,20 @@ class _ChatScreenState extends State<ChatScreenAI> {
           "text": error.toString(),
         });
       });
+      scrollToTheEnd();
+    });
+  }
+
+  void showWelcomeMessage() {
+    // Enviar un mensaje de bienvenida utilizando la API de Gemini
+    gemini.generateFromText("Hola").then((value) {
+      setState(() {
+        textChat.add({
+          "role": "Joi",
+          "text": value.text,
+        });
+      });
+      loading = false;
       scrollToTheEnd();
     });
   }

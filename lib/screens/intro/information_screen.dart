@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'intro/aclaration_screen.dart';
-import 'intro/bienvenida_screen.dart';
-import 'intro/terms_condition_screen.dart';
+import 'aclaration_screen.dart';
+import 'bienvenida_screen.dart';
+import 'terms_condition_screen.dart';
 
 class InformationPage extends StatelessWidget {
   const InformationPage({super.key});
