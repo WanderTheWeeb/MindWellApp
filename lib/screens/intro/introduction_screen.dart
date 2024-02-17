@@ -46,7 +46,7 @@ class IntroductionScreenState extends State<IntroductionScreen> {
         curve: Curves.ease,
       );
     } else {
-      Navigator.pushNamed(context, Routes.home);
+      Navigator.popAndPushNamed(context, Routes.home);
     }
   }
 
