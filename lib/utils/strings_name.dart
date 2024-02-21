@@ -12,5 +12,5 @@ class StringsName {
   static const String introduction = 'Introduction';
   static const String welcome = 'Welcome';
   static const String psicoProfile = 'Psico Profile';
-  static const String psicoAvalible = 'Psico Avalible';
+  static const String psicoAvalible = 'Psicologos disponibles';
 }
