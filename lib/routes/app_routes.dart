@@ -3,6 +3,7 @@ import 'package:mindwell/screens/chats/chat_screenAI.dart';
 import 'package:mindwell/screens/chats/chat_screen.dart';
 import 'package:mindwell/screens/dates/schedule_appointment_screen.dart';
 import 'package:mindwell/screens/home_screen.dart';
+import 'package:mindwell/screens/institutions/institutions_profile_screen.dart';
 import 'package:mindwell/screens/institutions/institutions_screen.dart';
 import 'package:mindwell/screens/intro/information_screen.dart';
 import 'package:mindwell/screens/intro/introduction_screen.dart';
@@ -40,4 +41,6 @@ Map<String, WidgetBuilder> appRoutes = {
   '/schedule_appointment': (BuildContext context) =>
       const ScheduleAppointmentScreen(),
   '/institution_list': (BuildContext context) => const InstitutionScreen(),
+  '/institution_profile': (BuildContext context) =>
+      const InstitutionProfileScreen(),
 };

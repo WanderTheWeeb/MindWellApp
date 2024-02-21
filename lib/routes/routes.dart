@@ -27,4 +27,5 @@ class Routes {
   static const String registrar = '/register';
   static const String scheduleAppointment = '/schedule_appointment';
   static const String institutionList = '/institution_list';
+  static const String institutionProfile = '/institution_profile';
 }
