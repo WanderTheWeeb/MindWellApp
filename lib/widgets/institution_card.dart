@@ -47,6 +47,8 @@ class InstitutionCard extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(3.0),
                 child: Text(
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   name,
                   style: TextStyle(
                     color: mindWellTheme.canvasColor,
