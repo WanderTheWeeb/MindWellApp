@@ -20,49 +20,25 @@ class PsicoAvalibleScreen extends StatelessWidget {
         padding: const EdgeInsets.all(15),
         children: [
           PsicoCard(
-            name: 'Mi mamá',
+            name: 'Javier Pino',
             pathImage:
-                'https://i.pinimg.com/originals/02/4a/76/024a76ee7c877513afab3d5540740a6e.jpg',
+                'https://cdn.domestika.org/c_limit,dpr_auto,f_auto,q_auto,w_820/v1576497340/content-items/003/518/329/_MG_5442-original.jpg?1576497340',
             onPressed: () {
               Navigator.of(context).pushNamed(Routes.psicoProfile);
             },
           ),
           PsicoCard(
-            name: 'John Doe',
+            name: 'Liliana',
             pathImage:
-                'https://imgs.search.brave.com/AG-8wPeZsqT_TOoBVNcNHR7sVO9r4kEZTW074WShF60/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9lMDAt/ZWxtdW5kby51ZWNk/bi5lcy9hc3NldHMv/bXVsdGltZWRpYS9p/bWFnZW5lcy8yMDIy/LzA4LzMwLzE2NjE4/ODM1ODQ4MzE5Lmpw/Zw',
+                'https://th.bing.com/th/id/OIP.ATP8XIchpWYEF2CDoAi7owHaHb?pid=ImgDet&w=474&h=475&rs=1',
             onPressed: () {
               Navigator.of(context).pushNamed(Routes.psicoProfile);
             },
           ),
           PsicoCard(
-            name: 'Jane Doe',
+            name: 'David Oseguera',
             pathImage:
-                'https://imgs.search.brave.com/AG-8wPeZsqT_TOoBVNcNHR7sVO9r4kEZTW074WShF60/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9lMDAt/ZWxtdW5kby51ZWNk/bi5lcy9hc3NldHMv/bXVsdGltZWRpYS9p/bWFnZW5lcy8yMDIy/LzA4LzMwLzE2NjE4/ODM1ODQ4MzE5Lmpw/Zw',
-            onPressed: () {
-              Navigator.of(context).pushNamed(Routes.psicoProfile);
-            },
-          ),
-          PsicoCard(
-            name: 'Ana de Armas',
-            pathImage:
-                'https://imgs.search.brave.com/AG-8wPeZsqT_TOoBVNcNHR7sVO9r4kEZTW074WShF60/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9lMDAt/ZWxtdW5kby51ZWNk/bi5lcy9hc3NldHMv/bXVsdGltZWRpYS9p/bWFnZW5lcy8yMDIy/LzA4LzMwLzE2NjE4/ODM1ODQ4MzE5Lmpw/Zw',
-            onPressed: () {
-              Navigator.of(context).pushNamed(Routes.psicoProfile);
-            },
-          ),
-          PsicoCard(
-            name: 'John Doe',
-            pathImage:
-                'https://imgs.search.brave.com/AG-8wPeZsqT_TOoBVNcNHR7sVO9r4kEZTW074WShF60/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9lMDAt/ZWxtdW5kby51ZWNk/bi5lcy9hc3NldHMv/bXVsdGltZWRpYS9p/bWFnZW5lcy8yMDIy/LzA4LzMwLzE2NjE4/ODM1ODQ4MzE5Lmpw/Zw',
-            onPressed: () {
-              Navigator.of(context).pushNamed(Routes.psicoProfile);
-            },
-          ),
-          PsicoCard(
-            name: 'Jane Doe',
-            pathImage:
-                'https://imgs.search.brave.com/AG-8wPeZsqT_TOoBVNcNHR7sVO9r4kEZTW074WShF60/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9lMDAt/ZWxtdW5kby51ZWNk/bi5lcy9hc3NldHMv/bXVsdGltZWRpYS9p/bWFnZW5lcy8yMDIy/LzA4LzMwLzE2NjE4/ODM1ODQ4MzE5Lmpw/Zw',
+                'https://th.bing.com/th/id/OIP.2cOe4ej-roywKGJXcvQQUQHaF7?rs=1&pid=ImgDetMain',
             onPressed: () {
               Navigator.of(context).pushNamed(Routes.psicoProfile);
             },
@@ -70,23 +46,47 @@ class PsicoAvalibleScreen extends StatelessWidget {
           PsicoCard(
             name: 'Ana de Armas',
             pathImage:
-                'https://imgs.search.brave.com/AG-8wPeZsqT_TOoBVNcNHR7sVO9r4kEZTW074WShF60/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9lMDAt/ZWxtdW5kby51ZWNk/bi5lcy9hc3NldHMv/bXVsdGltZWRpYS9p/bWFnZW5lcy8yMDIy/LzA4LzMwLzE2NjE4/ODM1ODQ4MzE5Lmpw/Zw',
+                'https://th.bing.com/th/id/OIP.d3K30F0kyTn81AoF3WCRzwHaE8?rs=1&pid=ImgDetMain',
             onPressed: () {
               Navigator.of(context).pushNamed(Routes.psicoProfile);
             },
           ),
           PsicoCard(
-            name: 'John Doe',
+            name: 'Maxine Bay',
             pathImage:
-                'https://imgs.search.brave.com/AG-8wPeZsqT_TOoBVNcNHR7sVO9r4kEZTW074WShF60/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9lMDAt/ZWxtdW5kby51ZWNk/bi5lcy9hc3NldHMv/bXVsdGltZWRpYS9p/bWFnZW5lcy8yMDIy/LzA4LzMwLzE2NjE4/ODM1ODQ4MzE5Lmpw/Zw',
+                'https://th.bing.com/th/id/OIP.kC-wGXKn1iwD1r8jxbFtrgHaF7?rs=1&pid=ImgDetMain',
             onPressed: () {
               Navigator.of(context).pushNamed(Routes.psicoProfile);
             },
           ),
           PsicoCard(
-            name: 'Jane Doe',
+            name: 'Omar Banos',
             pathImage:
-                'https://imgs.search.brave.com/AG-8wPeZsqT_TOoBVNcNHR7sVO9r4kEZTW074WShF60/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9lMDAt/ZWxtdW5kby51ZWNk/bi5lcy9hc3NldHMv/bXVsdGltZWRpYS9p/bWFnZW5lcy8yMDIy/LzA4LzMwLzE2NjE4/ODM1ODQ4MzE5Lmpw/Zw',
+                'https://csmr.umich.edu/media/people/sagar_kumar_u29m0lJ.jpg',
+            onPressed: () {
+              Navigator.of(context).pushNamed(Routes.psicoProfile);
+            },
+          ),
+          PsicoCard(
+            name: 'Courtney Barnett',
+            pathImage:
+                'https://cdn.domestika.org/c_fill,dpr_1.0,f_auto,h_1200,pg_1,t_base_params,w_1200/v1584056836/project-covers/000/567/180/567180-original.jpg?1584056836',
+            onPressed: () {
+              Navigator.of(context).pushNamed(Routes.psicoProfile);
+            },
+          ),
+          PsicoCard(
+            name: 'Aurora Asknes',
+            pathImage:
+                'https://e-cdn-images.dzcdn.net/images/cover/023c9246ea97eeec4d34d82f633ade3a/500x500-000000-80-0-0.jpg',
+            onPressed: () {
+              Navigator.of(context).pushNamed(Routes.psicoProfile);
+            },
+          ),
+          PsicoCard(
+            name: 'Jaime Mausán',
+            pathImage:
+                'https://th.bing.com/th/id/OIP.KaqI4wYhCyxgfi3NO2V0NAHaLH?rs=1&pid=ImgDetMain',
             onPressed: () {
               Navigator.of(context).pushNamed(Routes.psicoProfile);
             },
