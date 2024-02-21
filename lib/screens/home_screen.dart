@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mindwell/screens/institutions/institutions_screen.dart';
 import 'chats/chat_room_list.dart';
 import 'psico_avalible_screen.dart';
 
@@ -18,6 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
         body: [
           const ChatRoomList(),
           const PsicoAvalibleScreen(),
+          const InstitutionScreen()
         ][currentPageIndex],
         bottomNavigationBar: NavigationBar(
           destinations: const [
@@ -30,6 +32,11 @@ class _HomeScreenState extends State<HomeScreen> {
               label: 'Psicólogos',
               icon: Icon(Icons.psychology_alt_outlined),
               selectedIcon: Icon(Icons.psychology_alt),
+            ),
+            NavigationDestination(
+              label: 'Instituciones',
+              icon: Icon(Icons.corporate_fare_outlined),
+              selectedIcon: Icon(Icons.corporate_fare),
             ),
           ],
           selectedIndex: currentPageIndex,
