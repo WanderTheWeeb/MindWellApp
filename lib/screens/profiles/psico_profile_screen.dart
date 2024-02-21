@@ -23,13 +23,13 @@ class PsicoProfileScreen extends StatelessWidget {
                   CircleAvatar(
                     radius: 100,
                     backgroundImage: NetworkImage(
-                        'https://imgs.search.brave.com/AG-8wPeZsqT_TOoBVNcNHR7sVO9r4kEZTW074WShF60/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9lMDAt/ZWxtdW5kby51ZWNk/bi5lcy9hc3NldHMv/bXVsdGltZWRpYS9p/bWFnZW5lcy8yMDIy/LzA4LzMwLzE2NjE4/ODM1ODQ4MzE5Lmpw/Zw'),
+                        'https://img.freepik.com/free-photo/square-user-profile-front-side_187299-39570.jpg?w=740&t=st=1708478152~exp=1708478752~hmac=b59867fa943a9c77ac3d31ecd7f375726a634544ff0c457002d884735e65ec36'),
                   ),
                 ],
               ),
               const SizedBox(height: 20),
               Text(
-                'Ana de Armas',
+                'NOMBRE_PSICÓLOGO',
                 style: GoogleFonts.poppins(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -55,7 +55,7 @@ class PsicoProfileScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'AnaDeArmas@gmail.com',
+                    'example@domain.com',
                     style: GoogleFonts.poppins(
                       fontSize: 16,
                       fontWeight: FontWeight.normal,
