@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mindwell/widgets/institution_card.dart';
 
+import '../../routes/routes.dart';
+
 class InstitutionScreen extends StatelessWidget {
   const InstitutionScreen({super.key});
 
@@ -16,7 +18,7 @@ class InstitutionScreen extends StatelessWidget {
         children: [
           InstitutionCard(
               onPressed: () {
-                Navigator.pushNamed(context, '/institution_detail');
+                Navigator.pushNamed(context, Routes.institutionProfile);
               },
               name: 'Cendiuh',
               pathImage:
