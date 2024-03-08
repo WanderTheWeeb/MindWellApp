@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mindwell/routes/routes.dart';
+import 'package:mindwell/widgets/gradient_button.dart';
 
 class PsicoProfileScreen extends StatelessWidget {
   const PsicoProfileScreen({super.key});
@@ -223,18 +224,11 @@ class PsicoProfileScreen extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
               const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed(Routes.scheduleAppointment);
-                },
-                child: Text(
-                  'Agendar Cita',
-                  style: GoogleFonts.poppins(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
+              GradientButton(
+                  text: 'Agendar',
+                  onPressed: () {
+                    Navigator.pushNamed(context, Routes.scheduleAppointment);
+                  })
             ])));
   }
 }
