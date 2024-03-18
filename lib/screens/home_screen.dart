@@ -17,21 +17,21 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: [
-          const PsicoAvalibleScreen(),
           const PrincipalScreen(),
+          const PsicoAvalibleScreen(),
           const ChatRoomList(),
         ][currentPageIndex],
         bottomNavigationBar: NavigationBar(
           destinations: const [
             NavigationDestination(
-              label: 'Psicólogos',
-              icon: Icon(Icons.psychology_alt_outlined),
-              selectedIcon: Icon(Icons.psychology_alt),
-            ),
-            NavigationDestination(
               label: 'Home',
               icon: Icon(Icons.home_outlined),
               selectedIcon: Icon(Icons.home),
+            ),
+            NavigationDestination(
+              label: 'Psicólogos',
+              icon: Icon(Icons.psychology_alt_outlined),
+              selectedIcon: Icon(Icons.psychology_alt),
             ),
             NavigationDestination(
               label: 'Chat',

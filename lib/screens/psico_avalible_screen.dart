@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mindwell/routes/app_routes.dart';
+import 'package:mindwell/routes/routes.dart';
+import 'package:mindwell/screens/profiles/profile_screen.dart';
 
 class PsicoAvalibleScreen extends StatelessWidget {
   const PsicoAvalibleScreen({super.key});
@@ -119,44 +122,52 @@ class PsicoRow extends StatelessWidget {
       child: Row(
         children: [
           _buildPsicoColumn(
-              context,
-              'https://imgs.search.brave.com/EM4HVokShFFx51XWUMimcKHd8rZkfS-xwUIFckIazXc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzk1Lzlh/Lzg5Lzk1OWE4OTRj/NTVjMmY4M2JhOWM3/OWFjNDMzZjFiN2Fj/LmpwZw',
-              'Dr. Juan Perez',
-              'Psicologo Clinico'),
+            context,
+            'https://imgs.search.brave.com/EM4HVokShFFx51XWUMimcKHd8rZkfS-xwUIFckIazXc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzk1Lzlh/Lzg5Lzk1OWE4OTRj/NTVjMmY4M2JhOWM3/OWFjNDMzZjFiN2Fj/LmpwZw',
+            'Dr. Juan Perez',
+            'Psicologo Clinico',
+            () => Navigator.of(context).pushNamed(Routes.psicoProfile),
+          ),
           SizedBox(width: 16),
           _buildPsicoColumn(
               context,
               'https://imgs.search.brave.com/EM4HVokShFFx51XWUMimcKHd8rZkfS-xwUIFckIazXc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzk1Lzlh/Lzg5Lzk1OWE4OTRj/NTVjMmY4M2JhOWM3/OWFjNDMzZjFiN2Fj/LmpwZw',
               'Dra. Maria Lopez',
-              'Psicologo Infantil'),
+              'Psicologo Infantil',
+              () {}),
           SizedBox(width: 16),
           _buildPsicoColumn(
               context,
               'https://imgs.search.brave.com/EM4HVokShFFx51XWUMimcKHd8rZkfS-xwUIFckIazXc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzk1Lzlh/Lzg5Lzk1OWE4OTRj/NTVjMmY4M2JhOWM3/OWFjNDMzZjFiN2Fj/LmpwZw',
               'Dr. Carlos Ramirez',
-              'Psicologo de Parejas'),
+              'Psicologo de Parejas',
+              () {}),
           SizedBox(width: 16),
           _buildPsicoColumn(
               context,
               'https://imgs.search.brave.com/EM4HVokShFFx51XWUMimcKHd8rZkfS-xwUIFckIazXc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzk1Lzlh/Lzg5Lzk1OWE4OTRj/NTVjMmY4M2JhOWM3/OWFjNDMzZjFiN2Fj/LmpwZw',
               'Dr. Carlos Ramirez',
-              'Psicologo de Parejas'),
+              'Psicologo de Parejas',
+              () {}),
         ],
       ),
     );
   }
 
   Widget _buildPsicoColumn(BuildContext context, String imageUrl, String name,
-      String specialization) {
-    return Column(
-      children: [
-        Image(
-          image: NetworkImage(imageUrl),
-          width: 100,
-        ),
-        Text(name, style: Theme.of(context).textTheme.labelMedium),
-        Text(specialization, style: Theme.of(context).textTheme.labelSmall),
-      ],
+      String specialization, Function() onTap) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Column(
+        children: [
+          Image(
+            image: NetworkImage(imageUrl),
+            width: 100,
+          ),
+          Text(name, style: Theme.of(context).textTheme.labelMedium),
+          Text(specialization, style: Theme.of(context).textTheme.labelSmall),
+        ],
+      ),
     );
   }
 }

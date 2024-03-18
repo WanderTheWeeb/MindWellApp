@@ -1,240 +1,157 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:mindwell/routes/routes.dart';
 
-class PsicoProfileScreen extends StatelessWidget {
-  const PsicoProfileScreen({super.key});
+import '../../widgets/review_psico.dart';
+
+class PsicoProfileScreen extends StatefulWidget {
+  const PsicoProfileScreen({Key? key}) : super(key: key);
+
+  @override
+  _PsicoProfileScreenState createState() => _PsicoProfileScreenState();
+}
+
+class _PsicoProfileScreenState extends State<PsicoProfileScreen>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(
+        length: 3,
+        vsync: this); // Cambiar el número de pestañas según sea necesario
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'Perfil',
-            style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
+      appBar: AppBar(
+        title: Text('Psicólogo'),
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Container(
+            width: double.infinity,
+            height: 150,
+            color: Colors.blue,
           ),
-        ),
-        body: SingleChildScrollView(
-            padding: const EdgeInsets.all(20),
-            child: Column(children: [
-              const Stack(
-                alignment: Alignment.center,
-                children: [
-                  CircleAvatar(
-                    radius: 100,
-                    backgroundImage: NetworkImage(
-                        'https://imgs.search.brave.com/AG-8wPeZsqT_TOoBVNcNHR7sVO9r4kEZTW074WShF60/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9lMDAt/ZWxtdW5kby51ZWNk/bi5lcy9hc3NldHMv/bXVsdGltZWRpYS9p/bWFnZW5lcy8yMDIy/LzA4LzMwLzE2NjE4/ODM1ODQ4MzE5Lmpw/Zw'),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 20),
-              Text(
-                'Ana de Armas',
-                style: GoogleFonts.poppins(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+          SizedBox(height: 20),
+          CircleAvatar(
+            radius: 50,
+            backgroundImage: NetworkImage('https://picsum.photos/250?image=9'),
+          ),
+          SizedBox(height: 20),
+          Text(
+            'John Doe',
+            style: Theme.of(context).textTheme.headlineLarge,
+          ),
+          Text(
+            'Psicólogo de pareja',
+            style: Theme.of(context).textTheme.headlineMedium,
+          ),
+          TabBar(
+            tabs: [
+              Tab(text: 'Información'),
+              Tab(text: 'Agenda'),
+              Tab(text: 'Reseñas')
+            ],
+            controller: _tabController,
+          ),
+          Expanded(
+            child: TabBarView(
+              controller: _tabController,
+              children: [
+                ListView(
+                  children: [
+                    ListTile(
+                      leading: Icon(Icons.phone),
+                      title: Text('Teléfono'),
+                      subtitle: Text('123-456-7890'),
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.email),
+                      title: Text('Correo'),
+                      subtitle: Text('johndoe@gmail.com'),
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.access_time_outlined),
+                      title: Text('Actividad'),
+                      subtitle: Text('Frecuente'),
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.location_on),
+                      title: Text('Ubicación'),
+                      subtitle: Text('Calle 123, Ciudad, Estado'),
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.monetization_on),
+                      title: Text('Costo'),
+                      subtitle: Text('1000 MXN por sesión'),
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.psychology),
+                      title: Text('Especialidad'),
+                      subtitle: Text('Parejas'),
+                    )
+                  ],
                 ),
-              ),
-              const SizedBox(height: 10),
-              const Divider(
-                color: Colors.black,
-                height: 20,
-                thickness: 1,
-                indent: 20,
-                endIndent: 20,
-              ),
-              const SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Email:',
-                    style: GoogleFonts.poppins(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  Text(
-                    'AnaDeArmas@gmail.com',
-                    style: GoogleFonts.poppins(
-                      fontSize: 16,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Telefone:',
-                    style: GoogleFonts.poppins(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  Text(
-                    '+55 11 99999-9999',
-                    style: GoogleFonts.poppins(
-                      fontSize: 16,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Especialidade:',
-                    style: GoogleFonts.poppins(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  Text(
-                    'Psicologia Clínica',
-                    style: GoogleFonts.poppins(
-                      fontSize: 16,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Precio:',
-                    style: GoogleFonts.poppins(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  Text(
-                    '\$ 150,00',
-                    style: GoogleFonts.poppins(
-                      fontSize: 16,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Atendimento:',
-                    style: GoogleFonts.poppins(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  Text(
-                    'Presencial e Online',
-                    style: GoogleFonts.poppins(
-                      fontSize: 16,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Dirección:',
-                    style: GoogleFonts.poppins(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  Text(
-                    'Ruta de las Flores, 123',
-                    style: GoogleFonts.poppins(
-                      fontSize: 16,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Ciudad:',
-                    style: GoogleFonts.poppins(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  Text(
-                    'Cuba',
-                    style: GoogleFonts.poppins(
-                      fontSize: 16,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Idiomas:',
-                    style: GoogleFonts.poppins(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  Text(
-                    'Español, Inglés',
-                    style: GoogleFonts.poppins(
-                      fontSize: 16,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 20),
-              Text(
-                'Descripción:',
-                style: GoogleFonts.poppins(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              const SizedBox(height: 5),
-              Text(
-                'Soy una psicóloga especializada en terapia cognitivo-conductual. Tengo experiencia en el tratamiento de ansiedad, depresión, estrés y problemas de pareja. Me apasiona ayudar a las personas a mejorar su bienestar emocional y a alcanzar sus metas personales.',
-                style: GoogleFonts.merriweather(
-                  fontSize: 15,
-                  height: 1.5, // Interlineado
-                ),
-                textAlign: TextAlign.justify,
-                maxLines: 5,
-                overflow: TextOverflow.ellipsis,
-              ),
-              const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed(Routes.scheduleAppointment);
-                },
-                child: Text(
-                  'Agendar Cita',
-                  style: GoogleFonts.poppins(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
+                SingleChildScrollView(
+                  child: CalendarDatePicker(
+                    initialDate: DateTime.now(),
+                    firstDate: DateTime.now(),
+                    lastDate: DateTime(2026),
+                    onDateChanged: (value) {},
                   ),
                 ),
-              ),
-            ])));
+                ListView(
+                  children: [
+                    ReviewPsico(
+                        userName: 'Edoardo',
+                        userImage: 'https://picsum.photos/250?image=9',
+                        review: 'Muy buen psicólogo',
+                        rating: 5),
+                    ReviewPsico(
+                        userName: 'Edoardo',
+                        userImage: 'https://picsum.photos/250?image=9',
+                        review: 'Muy buen psicólogo',
+                        rating: 4),
+                    ReviewPsico(
+                        userName: 'Edoardo',
+                        userImage: 'https://picsum.photos/250?image=9',
+                        review: 'Muy buen psicólogo',
+                        rating: 3),
+                    ReviewPsico(
+                        userName: 'Edoardo',
+                        userImage: 'https://picsum.photos/250?image=9',
+                        review: 'Muy buen psicólogo',
+                        rating: 5),
+                    ReviewPsico(
+                        userName: 'Edoardo',
+                        userImage: 'https://picsum.photos/250?image=9',
+                        review: 'Muy buen psicólogo',
+                        rating: 5),
+                    ReviewPsico(
+                        userName: 'Edoardo',
+                        userImage: 'https://picsum.photos/250?image=9',
+                        review: 'Muy buen psicólogo',
+                        rating: 5),
+                    ReviewPsico(
+                        userName: 'Edoardo',
+                        userImage: 'https://picsum.photos/250?image=9',
+                        review: 'Muy buen psicólogo',
+                        rating: 3),
+                    ReviewPsico(
+                        userName: 'Edoardo',
+                        userImage: 'https://picsum.photos/250?image=9',
+                        review: 'Muy buen psicólogo',
+                        rating: 5),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
