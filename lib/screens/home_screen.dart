@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mindwell/screens/principal_screen.dart';
 import 'chats/chat_room_list.dart';
+import 'institutions/institution_screen.dart';
 import 'psico_avalible_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -20,6 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
           const PrincipalScreen(),
           const PsicoAvalibleScreen(),
           const ChatRoomList(),
+          const InstitutionScreen(),
         ][currentPageIndex],
         bottomNavigationBar: NavigationBar(
           destinations: const [
@@ -37,6 +39,11 @@ class _HomeScreenState extends State<HomeScreen> {
               label: 'Chat',
               icon: Icon(Icons.chat_outlined),
               selectedIcon: Icon(Icons.chat),
+            ),
+            NavigationDestination(
+              label: 'Instituciones',
+              icon: Icon(Icons.corporate_fare_outlined),
+              selectedIcon: Icon(Icons.corporate_fare),
             ),
           ],
           selectedIndex: currentPageIndex,

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mindwell/routes/routes.dart';
 
-class PsicoAvalibleScreen extends StatelessWidget {
-  const PsicoAvalibleScreen({super.key});
+class InstitutionScreen extends StatelessWidget {
+  const InstitutionScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +17,7 @@ class PsicoAvalibleScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Mejores Psicologos',
+                  Text('Mejores Consultorios cerca tu zona',
                       style: Theme.of(context).textTheme.titleLarge),
                   TextButton(
                     onPressed: () {},
@@ -26,20 +25,7 @@ class PsicoAvalibleScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              PsicoRow(),
-              const SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text('Psicologos Disponibles',
-                      style: Theme.of(context).textTheme.titleLarge),
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text('Ver todos'),
-                  ),
-                ],
-              ),
-              PsicoRow(),
+              InstitutionRow(),
               SizedBox(height: 20),
               ListBody(
                 children: [
@@ -107,10 +93,8 @@ class PsicoAvalibleScreen extends StatelessWidget {
   }
 }
 
-class PsicoRow extends StatelessWidget {
-  const PsicoRow({
-    Key? key,
-  }) : super(key: key);
+class InstitutionRow extends StatelessWidget {
+  const InstitutionRow({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -119,41 +103,41 @@ class PsicoRow extends StatelessWidget {
       primary: false,
       child: Row(
         children: [
-          _buildPsicoColumn(
+          _buildInstitutionColumn(
             context,
             'https://imgs.search.brave.com/EM4HVokShFFx51XWUMimcKHd8rZkfS-xwUIFckIazXc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzk1Lzlh/Lzg5Lzk1OWE4OTRj/NTVjMmY4M2JhOWM3/OWFjNDMzZjFiN2Fj/LmpwZw',
-            'Dr. Juan Perez',
+            'Consultorio Dr. Juan Perez',
             'Psicologo Clinico',
-            () => Navigator.of(context).pushNamed(Routes.psicoProfile),
+            () {},
           ),
           SizedBox(width: 16),
-          _buildPsicoColumn(
+          _buildInstitutionColumn(
               context,
               'https://imgs.search.brave.com/EM4HVokShFFx51XWUMimcKHd8rZkfS-xwUIFckIazXc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzk1Lzlh/Lzg5Lzk1OWE4OTRj/NTVjMmY4M2JhOWM3/OWFjNDMzZjFiN2Fj/LmpwZw',
-              'Dra. Maria Lopez',
+              'Consultorio Dra. Maria Lopez',
               'Psicologo Infantil',
               () {}),
           SizedBox(width: 16),
-          _buildPsicoColumn(
+          _buildInstitutionColumn(
               context,
               'https://imgs.search.brave.com/EM4HVokShFFx51XWUMimcKHd8rZkfS-xwUIFckIazXc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzk1Lzlh/Lzg5Lzk1OWE4OTRj/NTVjMmY4M2JhOWM3/OWFjNDMzZjFiN2Fj/LmpwZw',
-              'Dr. Carlos Ramirez',
+              'Consultorio Dr. Carlos Ramirez',
               'Psicologo de Parejas',
               () {}),
           SizedBox(width: 16),
-          _buildPsicoColumn(
+          _buildInstitutionColumn(
               context,
               'https://imgs.search.brave.com/EM4HVokShFFx51XWUMimcKHd8rZkfS-xwUIFckIazXc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzk1Lzlh/Lzg5Lzk1OWE4OTRj/NTVjMmY4M2JhOWM3/OWFjNDMzZjFiN2Fj/LmpwZw',
-              'Dr. Carlos Ramirez',
-              'Psicologo de Parejas',
+              'Centro de Psicologia',
+              'Psicologo Clinico',
               () {}),
         ],
       ),
     );
   }
 
-  Widget _buildPsicoColumn(BuildContext context, String imageUrl, String name,
-      String specialization, Function() onTap) {
+  Widget _buildInstitutionColumn(BuildContext context, String imageUrl,
+      String name, String specialization, Function() onTap) {
     return GestureDetector(
       onTap: onTap,
       child: Column(
@@ -164,27 +148,6 @@ class PsicoRow extends StatelessWidget {
           ),
           Text(name, style: Theme.of(context).textTheme.labelMedium),
           Text(specialization, style: Theme.of(context).textTheme.labelSmall),
-        ],
-      ),
-    );
-  }
-}
-
-class LostConnection extends StatelessWidget {
-  const LostConnection({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          Image(
-            image: AssetImage('assets/images/lost.png'),
-            width: 350,
-          ),
-          SizedBox(height: 20),
-          OutlinedButton(onPressed: () {}, child: Text('Reintentar'))
         ],
       ),
     );
