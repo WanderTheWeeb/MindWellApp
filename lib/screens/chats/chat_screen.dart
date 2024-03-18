@@ -24,7 +24,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   context: context,
                   builder: (BuildContext context) {
                     return AlertDialog(
-                      backgroundColor: lightColorScheme.onPrimary,
+                      backgroundColor: mindWellColorScheme.onPrimary,
                       title: const Text('Terminar chat'),
                       content: const Text(
                           '¿Estas seguro de que quieres terminar el chat? Esperamos que hayas podido recibir la ayuda que necesitabas'),

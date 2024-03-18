@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mindwell/screens/principal_screen.dart';
 import 'chats/chat_room_list.dart';
 import 'psico_avalible_screen.dart';
 
@@ -16,20 +17,26 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: [
-          const ChatRoomList(),
           const PsicoAvalibleScreen(),
+          const PrincipalScreen(),
+          const ChatRoomList(),
         ][currentPageIndex],
         bottomNavigationBar: NavigationBar(
           destinations: const [
             NavigationDestination(
-              label: 'Chat',
-              icon: Icon(Icons.chat_outlined),
-              selectedIcon: Icon(Icons.chat),
-            ),
-            NavigationDestination(
               label: 'Psicólogos',
               icon: Icon(Icons.psychology_alt_outlined),
               selectedIcon: Icon(Icons.psychology_alt),
+            ),
+            NavigationDestination(
+              label: 'Home',
+              icon: Icon(Icons.home_outlined),
+              selectedIcon: Icon(Icons.home),
+            ),
+            NavigationDestination(
+              label: 'Chat',
+              icon: Icon(Icons.chat_outlined),
+              selectedIcon: Icon(Icons.chat),
             ),
           ],
           selectedIndex: currentPageIndex,

@@ -26,4 +26,5 @@ class Routes {
   static const String chatAI = '/chat_AI';
   static const String registrar = '/register';
   static const String scheduleAppointment = '/schedule_appointment';
+  static const String principalScreen = '/principal_screen';
 }

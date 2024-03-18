@@ -30,12 +30,12 @@ class ProfileScreen extends StatelessWidget {
                     right: 10,
                     child: Container(
                       decoration: BoxDecoration(
-                        color: lightColorScheme.primary,
+                        color: mindWellColorScheme.primary,
                         shape: BoxShape.circle,
                       ),
                       child: IconButton(
-                        icon:
-                            Icon(Icons.edit, color: lightColorScheme.onPrimary),
+                        icon: Icon(Icons.edit,
+                            color: mindWellColorScheme.onPrimary),
                         onPressed: () {},
                       ),
                     ),

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mindwell/screens/chats/chat_screenAI.dart';
 import 'package:mindwell/screens/chats/chat_screen.dart';
-import 'package:mindwell/screens/dates/schedule_appointment_screen.dart';
 import 'package:mindwell/screens/home_screen.dart';
 import 'package:mindwell/screens/intro/information_screen.dart';
 import 'package:mindwell/screens/intro/introduction_screen.dart';
 import 'package:mindwell/screens/login/login_screen.dart';
+import 'package:mindwell/screens/principal_screen.dart';
 import 'package:mindwell/screens/profiles/profile_screen.dart';
 import 'package:mindwell/screens/profiles/psico_profile_screen.dart';
 import 'package:mindwell/screens/psico_avalible_screen.dart';
@@ -16,6 +16,7 @@ import 'package:mindwell/screens/setting/notification_settings_screen.dart';
 import 'package:mindwell/screens/setting/privacy_settings_screen.dart';
 import 'package:mindwell/screens/setting/settings_screen.dart';
 import '../screens/chats/chat_room_list.dart';
+import '../screens/schedule/schedule_appointment_screen.dart';
 
 Map<String, WidgetBuilder> appRoutes = {
   '/home': (BuildContext context) => const HomeScreen(),
@@ -38,4 +39,5 @@ Map<String, WidgetBuilder> appRoutes = {
   '/chat_AI': (BuildContext context) => const ChatScreenAI(),
   '/schedule_appointment': (BuildContext context) =>
       const ScheduleAppointmentScreen(),
+  '/principal_screen': (BuildContext context) => const PrincipalScreen(),
 };
