@@ -7,8 +7,7 @@ class PrincipalScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Bienvendio a MindWell'),
-        centerTitle: true,
+        title: const Text('MindWell'),
       ),
       body: SingleChildScrollView(
         child: Padding(

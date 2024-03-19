@@ -26,6 +26,17 @@ class _PsicoProfileScreenState extends State<PsicoProfileScreen>
     return Scaffold(
       appBar: AppBar(
         title: Text('Psicólogo'),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.favorite_border),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.share),
+          ),
+          IconButton(onPressed: () {}, icon: Icon(Icons.more_vert))
+        ],
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
