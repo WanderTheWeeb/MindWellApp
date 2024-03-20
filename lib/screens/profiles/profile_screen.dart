@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:mindwell/utils/theme.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -9,10 +8,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(
-            'Perfil',
-            style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
-          ),
+          title: Text('Perfil'),
         ),
         body: SingleChildScrollView(
             padding: const EdgeInsets.all(20),
@@ -43,46 +39,21 @@ class ProfileScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 20),
-              Text(
-                'Ana de Armas',
-                style: GoogleFonts.poppins(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              Text('Ana de Armas'),
               const SizedBox(height: 10),
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                Text(
-                  'Fecha de nacimiento:',
-                  style: GoogleFonts.poppins(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
+                Text('Fecha de nacimiento:'),
                 const Text('01/01/1990')
               ]),
               const SizedBox(height: 10),
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                Text(
-                  'Email:',
-                  style: GoogleFonts.poppins(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
+                Text('Email:'),
                 const Text('AnaDeArmas@gmail.com')
               ]),
               const SizedBox(height: 10),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                Text(
-                  'Telefone:',
-                  style: GoogleFonts.poppins(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                const Text('(11) 99999-9999')
-              ]),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [Text('Telefone:'), const Text('(11) 99999-9999')]),
             ])));
   }
 }
