@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../routes/routes.dart';
+
 class InstitutionScreen extends StatelessWidget {
   const InstitutionScreen({super.key});
 
@@ -105,29 +107,31 @@ class InstitutionRow extends StatelessWidget {
         children: [
           _buildInstitutionColumn(
             context,
-            'https://imgs.search.brave.com/EM4HVokShFFx51XWUMimcKHd8rZkfS-xwUIFckIazXc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzk1Lzlh/Lzg5Lzk1OWE4OTRj/NTVjMmY4M2JhOWM3/OWFjNDMzZjFiN2Fj/LmpwZw',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaNp5_JutlwsPhJA4td9Nvr2DT5qqySDEhGA&usqp=CAU',
             'Consultorio Dr. Juan Perez',
             'Psicologo Clinico',
-            () {},
+            () {
+              Navigator.of(context).pushNamed(Routes.institutionProfile);
+            },
           ),
           SizedBox(width: 16),
           _buildInstitutionColumn(
               context,
-              'https://imgs.search.brave.com/EM4HVokShFFx51XWUMimcKHd8rZkfS-xwUIFckIazXc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzk1Lzlh/Lzg5Lzk1OWE4OTRj/NTVjMmY4M2JhOWM3/OWFjNDMzZjFiN2Fj/LmpwZw',
+              'https://simisae.com.mx/assets/images/logo-simisae.png',
               'Consultorio Dra. Maria Lopez',
               'Psicologo Infantil',
               () {}),
           SizedBox(width: 16),
           _buildInstitutionColumn(
               context,
-              'https://imgs.search.brave.com/EM4HVokShFFx51XWUMimcKHd8rZkfS-xwUIFckIazXc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzk1Lzlh/Lzg5Lzk1OWE4OTRj/NTVjMmY4M2JhOWM3/OWFjNDMzZjFiN2Fj/LmpwZw',
+              'https://ayuda-psicologica-en-linea.com/wp-content/uploads/2019/12/Movil_Acerca-de.png',
               'Consultorio Dr. Carlos Ramirez',
               'Psicologo de Parejas',
               () {}),
           SizedBox(width: 16),
           _buildInstitutionColumn(
               context,
-              'https://imgs.search.brave.com/EM4HVokShFFx51XWUMimcKHd8rZkfS-xwUIFckIazXc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzk1Lzlh/Lzg5Lzk1OWE4OTRj/NTVjMmY4M2JhOWM3/OWFjNDMzZjFiN2Fj/LmpwZw',
+              'https://difzapopan.gob.mx/wp-content/uploads/2020/09/ENTRADA-CAP.jpg',
               'Centro de Psicologia',
               'Psicologo Clinico',
               () {}),

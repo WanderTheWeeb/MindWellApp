@@ -16,6 +16,7 @@ import 'package:mindwell/screens/setting/notification_settings_screen.dart';
 import 'package:mindwell/screens/setting/privacy_settings_screen.dart';
 import 'package:mindwell/screens/setting/settings_screen.dart';
 import '../screens/chats/chat_room_list.dart';
+import '../screens/institutions/institution_profile.dart';
 import '../screens/institutions/institution_screen.dart';
 import '../screens/schedule/schedule_appointment_screen.dart';
 
@@ -42,4 +43,5 @@ Map<String, WidgetBuilder> appRoutes = {
       const ScheduleAppointmentScreen(),
   '/principal_screen': (BuildContext context) => const PrincipalScreen(),
   '/institution_screen': (BuildContext context) => const InstitutionScreen(),
+  '/institution_profile': (BuildContext context) => const InstitutionProfile(),
 };

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:mindwell/routes/routes.dart';
 
 class PsicoAvalibleScreen extends StatelessWidget {
@@ -41,6 +42,46 @@ class PsicoAvalibleScreen extends StatelessWidget {
               ),
               PsicoRow(),
               SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('Filtrar por distancia',
+                      style: Theme.of(context).textTheme.titleLarge),
+                ],
+              ),
+              SizedBox(height: 10),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Chip(
+                        label: Text('Todos'),
+                        backgroundColor:
+                            Theme.of(context).colorScheme.secondaryContainer),
+                    SizedBox(width: 8),
+                    Chip(
+                        label: Text('5km'),
+                        backgroundColor:
+                            Theme.of(context).colorScheme.secondaryContainer),
+                    SizedBox(width: 8),
+                    Chip(
+                        label: Text('10km'),
+                        backgroundColor:
+                            Theme.of(context).colorScheme.secondaryContainer),
+                    SizedBox(width: 8),
+                    Chip(
+                        label: Text('15km'),
+                        backgroundColor:
+                            Theme.of(context).colorScheme.secondaryContainer),
+                    SizedBox(width: 8),
+                    Chip(
+                        label: Text('20km'),
+                        backgroundColor:
+                            Theme.of(context).colorScheme.secondaryContainer),
+                  ],
+                ),
+              ),
               ListBody(
                 children: [
                   ListTile(
@@ -121,7 +162,7 @@ class PsicoRow extends StatelessWidget {
         children: [
           _buildPsicoColumn(
             context,
-            'https://imgs.search.brave.com/EM4HVokShFFx51XWUMimcKHd8rZkfS-xwUIFckIazXc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzk1Lzlh/Lzg5Lzk1OWE4OTRj/NTVjMmY4M2JhOWM3/OWFjNDMzZjFiN2Fj/LmpwZw',
+            'https://carlaotero.es/wp-content/uploads/2021/10/anapolitan1-scaled.jpg',
             'Dr. Juan Perez',
             'Psicologo Clinico',
             () => Navigator.of(context).pushNamed(Routes.psicoProfile),
@@ -129,21 +170,21 @@ class PsicoRow extends StatelessWidget {
           SizedBox(width: 16),
           _buildPsicoColumn(
               context,
-              'https://imgs.search.brave.com/EM4HVokShFFx51XWUMimcKHd8rZkfS-xwUIFckIazXc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzk1Lzlh/Lzg5Lzk1OWE4OTRj/NTVjMmY4M2JhOWM3/OWFjNDMzZjFiN2Fj/LmpwZw',
+              'https://paulafotografia.com/wp-content/uploads/2021/11/DSC_2096_PF.jpg',
               'Dra. Maria Lopez',
               'Psicologo Infantil',
               () {}),
           SizedBox(width: 16),
           _buildPsicoColumn(
               context,
-              'https://imgs.search.brave.com/EM4HVokShFFx51XWUMimcKHd8rZkfS-xwUIFckIazXc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzk1Lzlh/Lzg5Lzk1OWE4OTRj/NTVjMmY4M2JhOWM3/OWFjNDMzZjFiN2Fj/LmpwZw',
+              'https://b2472105.smushcdn.com/2472105/wp-content/uploads/2022/11/10-Poses-para-foto-de-Perfil-Profesional-Mujer-04-2022-1-819x1024.jpg?lossy=1&strip=1&webp=1',
               'Dr. Carlos Ramirez',
               'Psicologo de Parejas',
               () {}),
           SizedBox(width: 16),
           _buildPsicoColumn(
               context,
-              'https://imgs.search.brave.com/EM4HVokShFFx51XWUMimcKHd8rZkfS-xwUIFckIazXc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzk1Lzlh/Lzg5Lzk1OWE4OTRj/NTVjMmY4M2JhOWM3/OWFjNDMzZjFiN2Fj/LmpwZw',
+              'https://i.pinimg.com/originals/94/55/72/94557248162d6bb98fcbe1af70f00a12.png',
               'Dr. Carlos Ramirez',
               'Psicologo de Parejas',
               () {}),
@@ -161,6 +202,7 @@ class PsicoRow extends StatelessWidget {
           Image(
             image: NetworkImage(imageUrl),
             width: 100,
+            height: 120,
           ),
           Text(name, style: Theme.of(context).textTheme.labelMedium),
           Text(specialization, style: Theme.of(context).textTheme.labelSmall),
