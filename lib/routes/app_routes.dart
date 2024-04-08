@@ -9,7 +9,7 @@ import 'package:mindwell/screens/principal_screen.dart';
 import 'package:mindwell/screens/profiles/profile_screen.dart';
 import 'package:mindwell/screens/profiles/psico_profile_screen.dart';
 import 'package:mindwell/screens/psico_avalible_screen.dart';
-import 'package:mindwell/screens/register/register_screen.dart';
+import 'package:mindwell/screens/register/register_screen_psicologo.dart';
 import 'package:mindwell/screens/setting/help_settings_screen.dart';
 import 'package:mindwell/screens/setting/language_settings_screen.dart';
 import 'package:mindwell/screens/setting/notification_settings_screen.dart';
