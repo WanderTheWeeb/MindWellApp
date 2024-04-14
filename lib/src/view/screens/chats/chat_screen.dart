@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mindwell/utils/theme.dart';
+import 'package:go_router/go_router.dart';
+import 'package:mindwell/src/utils/theme/theme.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({Key? key});
@@ -31,7 +32,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       actions: [
                         TextButton(
                           onPressed: () {
-                            Navigator.pop(context);
+                            context.pop();
                           },
                           child: const Center(child: Text('Terminar chat')),
                         ),

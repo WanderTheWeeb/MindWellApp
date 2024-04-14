@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_gemini/google_gemini.dart';
-import 'package:mindwell/utils/theme.dart';
+import 'package:mindwell/src/utils/theme/theme.dart';
 
 const apiKey = "AIzaSyB_fA3_fymQPxkAP6Yn5JBFyknCn24o12s";
 
@@ -105,7 +106,7 @@ class _ChatScreenState extends State<ChatScreenAI> {
                       actions: [
                         TextButton(
                           onPressed: () {
-                            Navigator.pop(context);
+                            context.pop();
                           },
                           child: const Center(child: Text('Terminar chat')),
                         ),

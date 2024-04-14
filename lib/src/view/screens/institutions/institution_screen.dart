@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mindwell/routes/routes.dart';
 
-class PsicoAvalibleScreen extends StatelessWidget {
-  const PsicoAvalibleScreen({super.key});
+class InstitutionScreen extends StatelessWidget {
+  const InstitutionScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +17,7 @@ class PsicoAvalibleScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Mejores Psicologos',
+                  Text('Mejores Consultorios cerca tu zona',
                       style: Theme.of(context).textTheme.titleLarge),
                   TextButton(
                     onPressed: () {},
@@ -26,61 +25,8 @@ class PsicoAvalibleScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              PsicoRow(),
-              const SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text('Psicologos Disponibles',
-                      style: Theme.of(context).textTheme.titleLarge),
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text('Ver todos'),
-                  ),
-                ],
-              ),
-              PsicoRow(),
+              InstitutionRow(),
               SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text('Filtrar por distancia',
-                      style: Theme.of(context).textTheme.titleLarge),
-                ],
-              ),
-              SizedBox(height: 10),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Chip(
-                        label: Text('Todos'),
-                        backgroundColor:
-                            Theme.of(context).colorScheme.secondaryContainer),
-                    SizedBox(width: 8),
-                    Chip(
-                        label: Text('5km'),
-                        backgroundColor:
-                            Theme.of(context).colorScheme.secondaryContainer),
-                    SizedBox(width: 8),
-                    Chip(
-                        label: Text('10km'),
-                        backgroundColor:
-                            Theme.of(context).colorScheme.secondaryContainer),
-                    SizedBox(width: 8),
-                    Chip(
-                        label: Text('15km'),
-                        backgroundColor:
-                            Theme.of(context).colorScheme.secondaryContainer),
-                    SizedBox(width: 8),
-                    Chip(
-                        label: Text('20km'),
-                        backgroundColor:
-                            Theme.of(context).colorScheme.secondaryContainer),
-                  ],
-                ),
-              ),
               ListBody(
                 children: [
                   ListTile(
@@ -147,10 +93,8 @@ class PsicoAvalibleScreen extends StatelessWidget {
   }
 }
 
-class PsicoRow extends StatelessWidget {
-  const PsicoRow({
-    Key? key,
-  }) : super(key: key);
+class InstitutionRow extends StatelessWidget {
+  const InstitutionRow({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -159,41 +103,43 @@ class PsicoRow extends StatelessWidget {
       primary: false,
       child: Row(
         children: [
-          _buildPsicoColumn(
+          _buildInstitutionColumn(
             context,
-            'https://carlaotero.es/wp-content/uploads/2021/10/anapolitan1-scaled.jpg',
-            'Dr. Juan Perez',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaNp5_JutlwsPhJA4td9Nvr2DT5qqySDEhGA&usqp=CAU',
+            'Consultorio Dr. Juan Perez',
             'Psicologo Clinico',
-            () => Navigator.of(context).pushNamed(Routes.psicoProfile),
+            () {
+              Navigator.of(context).pushNamed('/institution_profile');
+            },
           ),
           SizedBox(width: 16),
-          _buildPsicoColumn(
+          _buildInstitutionColumn(
               context,
-              'https://paulafotografia.com/wp-content/uploads/2021/11/DSC_2096_PF.jpg',
-              'Dra. Maria Lopez',
+              'https://simisae.com.mx/assets/images/logo-simisae.png',
+              'Consultorio Dra. Maria Lopez',
               'Psicologo Infantil',
               () {}),
           SizedBox(width: 16),
-          _buildPsicoColumn(
+          _buildInstitutionColumn(
               context,
-              'https://b2472105.smushcdn.com/2472105/wp-content/uploads/2022/11/10-Poses-para-foto-de-Perfil-Profesional-Mujer-04-2022-1-819x1024.jpg?lossy=1&strip=1&webp=1',
-              'Dr. Carlos Ramirez',
+              'https://ayuda-psicologica-en-linea.com/wp-content/uploads/2019/12/Movil_Acerca-de.png',
+              'Consultorio Dr. Carlos Ramirez',
               'Psicologo de Parejas',
               () {}),
           SizedBox(width: 16),
-          _buildPsicoColumn(
+          _buildInstitutionColumn(
               context,
-              'https://i.pinimg.com/originals/94/55/72/94557248162d6bb98fcbe1af70f00a12.png',
-              'Dr. Carlos Ramirez',
-              'Psicologo de Parejas',
+              'https://difzapopan.gob.mx/wp-content/uploads/2020/09/ENTRADA-CAP.jpg',
+              'Centro de Psicologia',
+              'Psicologo Clinico',
               () {}),
         ],
       ),
     );
   }
 
-  Widget _buildPsicoColumn(BuildContext context, String imageUrl, String name,
-      String specialization, Function() onTap) {
+  Widget _buildInstitutionColumn(BuildContext context, String imageUrl,
+      String name, String specialization, Function() onTap) {
     return GestureDetector(
       onTap: onTap,
       child: Column(
@@ -201,31 +147,9 @@ class PsicoRow extends StatelessWidget {
           Image(
             image: NetworkImage(imageUrl),
             width: 100,
-            height: 120,
           ),
           Text(name, style: Theme.of(context).textTheme.labelMedium),
           Text(specialization, style: Theme.of(context).textTheme.labelSmall),
-        ],
-      ),
-    );
-  }
-}
-
-class LostConnection extends StatelessWidget {
-  const LostConnection({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          Image(
-            image: AssetImage('assets/images/lost.png'),
-            width: 350,
-          ),
-          SizedBox(height: 20),
-          OutlinedButton(onPressed: () {}, child: Text('Reintentar'))
         ],
       ),
     );

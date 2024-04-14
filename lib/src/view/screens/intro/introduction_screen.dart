@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mindwell/routes/routes.dart';
-import 'package:mindwell/screens/home_screen.dart';
+import 'package:go_router/go_router.dart';
+import 'package:mindwell/src/view/screens/home/home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -46,7 +46,7 @@ class IntroductionScreenState extends State<IntroductionScreen> {
         curve: Curves.ease,
       );
     } else {
-      Navigator.popAndPushNamed(context, Routes.home);
+      context.pushReplacement('/');
     }
   }
 

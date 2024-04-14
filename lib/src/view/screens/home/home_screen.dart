@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mindwell/screens/principal_screen.dart';
-import 'chats/chat_room_list.dart';
-import 'institutions/institution_screen.dart';
+import 'package:mindwell/src/view/screens/home/principal_screen.dart';
+import '../chats/chat_room_list.dart';
+import '../institutions/institution_screen.dart';
 import 'psico_avalible_screen.dart';
 
 class HomeScreen extends StatefulWidget {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mindwell/routes/routes.dart';
-import 'package:mindwell/widgets/pop_menu.dart';
+import 'package:go_router/go_router.dart';
+import 'package:mindwell/routes/app_routes.dart';
+import 'package:mindwell/src/view/widgets/pop_menu.dart';
 
 class ChatRoomList extends StatelessWidget {
   const ChatRoomList({super.key});
@@ -24,14 +25,14 @@ class ChatRoomList extends StatelessWidget {
               title: const Text('Chat Room '),
               subtitle: const Text('This is a chat room'),
               onTap: () {
-                Navigator.of(context).pushNamed(Routes.chat);
+                context.push('/chat');
               },
             );
           },
         ),
         floatingActionButton: ElevatedButton(
           onPressed: () {
-            Navigator.of(context).pushNamed(Routes.chatAI);
+            context.push(Routes.chatAI);
           },
           child: const Icon(Icons.message),
         ));

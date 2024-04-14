@@ -1,58 +1,22 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
+import 'package:mindwell/main.dart';
+import 'package:supabase/supabase.dart';
 
-class RegisterPage extends StatefulWidget {
-  const RegisterPage({Key? key, required this.isRegistering}) : super(key: key);
-
-  static Route<void> route({bool isRegistering = false}) {
-    return MaterialPageRoute(
-      builder: (context) => RegisterPage(isRegistering: isRegistering),
-    );
-  }
-
-  final bool isRegistering;
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
 
   @override
-  State<RegisterPage> createState() => _RegisterPageState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
-  final bool _isLoading = false;
-
-  final _formKey = GlobalKey<FormState>();
-
+class _RegisterScreenState extends State<RegisterScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _usernameController = TextEditingController();
-
-  //late final StreamSubscription<AuthState> _authSubscription;
-
-  @override
-  void initState() {
-    super.initState();
-
-    //bool haveNavigated = false;
-    // Listen to auth state to redirect user when the user clicks on confirmation link
-    /* _authSubscription = supabase.auth.onAuthStateChange.listen((data) {
-      final session = data.session;
-      if (session != null && !haveNavigated) {
-        haveNavigated = true;
-        Navigator.of(context).pushReplacement(RoomsPage.route());
-      }
-    });*/
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-
-    // Dispose subscription when no longer needed
-    // _authSubscription.cancel();
-  }
+  final _formKey = GlobalKey<FormState>();
 
   Future<void> _signUp() async {
-    /*final isValid = _formKey.currentState!.validate();
+    final isValid = _formKey.currentState!.validate();
     if (!isValid) {
       return;
     }
@@ -66,32 +30,42 @@ class _RegisterPageState extends State<RegisterPage> {
         data: {'username': username},
         emailRedirectTo: 'io.supabase.chat://login',
       );
-      context.showSnackBar(
-          message: 'Por favor revisa tu correo electronico para confirmar ');
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Revisa tu correo para confirmar tu cuenta'),
+        ),
+      );
     } on AuthException catch (error) {
-      context.showErrorSnackBar(message: error.message);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(error.message),
+          backgroundColor: Theme.of(context).colorScheme.error,
+        ),
+      );
     } catch (error) {
       debugPrint(error.toString());
-      context.showErrorSnackBar(message: unexpectedErrorMessage);
-    }*/
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Error al registrar'),
+        ),
+      );
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
         title: const Text('Registro'),
       ),
       body: Form(
-        key: _formKey,
         child: ListView(
-          //padding: formPadding,
+          padding: const EdgeInsets.all(16),
           children: [
             TextFormField(
               controller: _emailController,
               decoration: const InputDecoration(
-                label: Text('Email'),
+                labelText: 'Email',
               ),
               validator: (val) {
                 if (val == null || val.isEmpty) {
@@ -106,14 +80,14 @@ class _RegisterPageState extends State<RegisterPage> {
               controller: _passwordController,
               obscureText: true,
               decoration: const InputDecoration(
-                label: Text('Contraseña'),
+                labelText: 'Contraseña',
               ),
               validator: (val) {
                 if (val == null || val.isEmpty) {
                   return 'Obligatorio';
                 }
                 if (val.length < 6) {
-                  return '6 caracteres como minimo';
+                  return '6 caracteres como mínimo';
                 }
                 return null;
               },
@@ -122,7 +96,7 @@ class _RegisterPageState extends State<RegisterPage> {
             TextFormField(
               controller: _usernameController,
               decoration: const InputDecoration(
-                label: Text('Usuario'),
+                labelText: 'Usuario',
               ),
               validator: (val) {
                 if (val == null || val.isEmpty) {
@@ -137,12 +111,9 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
             const SizedBox(height: 16),
             ElevatedButton(
-              onPressed: _isLoading ? null : _signUp,
-              child: const Text('Registrate'),
+              onPressed: _signUp,
+              child: const Text('Regístrate'),
             ),
-            const SizedBox(height: 16),
-            TextButton(
-                onPressed: () {}, child: const Text('Ya tengo una cuenta'))
           ],
         ),
       ),

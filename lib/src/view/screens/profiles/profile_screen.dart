@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mindwell/utils/theme.dart';
+import 'package:mindwell/src/utils/theme/theme.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});

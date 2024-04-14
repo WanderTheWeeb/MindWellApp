@@ -1,33 +1,94 @@
-class Routes {
-  Routes._();
-  static const String home = '/home';
-  static const String introduction = '/introduction';
-  static const String inicio = '/inicio';
-  static const String splash = '/splash';
-  static const String login = '/login';
-  static const String register = '/register';
-  static const String settings = '/settings';
-  static const String profile = '/profile';
-  static const String psicoProfile = '/psico_profile';
-  static const String chat = '/chat';
-  static const String chatList = '/chatList';
-  static const String chatRoom = '/chatRoom';
-  static const String chatRoomList = '/chatRoomList';
-  static const String chatRoomListPsico = '/chatRoomListPsico';
-  static const String chatRoomPsico = '/chatRoomPsico';
-  static const String chatRoomListUser = '/chatRoomListUser';
-  static const String psicoList = '/psicoList';
-  static const String information = '/information';
-  static const String notificationSettings = '/notification_settings';
-  static const String languageSettings = '/language_settings';
-  static const String privacySettings = '/privacy_settings';
-  static const String help = '/help';
-  static const String listado = '/list';
-  static const String chatAI = '/chat_AI';
-  static const String registrar = '/register';
-  static const String scheduleAppointment = '/schedule_appointment';
-  static const String principalScreen = '/principal_screen';
-  static const String weekActivities = '/week_activities';
-  static const String institutionScreen = '/institution_screen';
-  static const String institutionProfile = '/institution_profile';
-}
+import 'package:go_router/go_router.dart';
+
+import 'package:mindwell/src/view/screen_barrel.dart';
+
+import 'app_routes.dart';
+
+GoRouter appRoutes = GoRouter(
+  routes: [
+    //home
+    GoRoute(path: Routes.home, builder: (context, state) => const HomeScreen()),
+    GoRoute(
+        path: Routes.principalScreen,
+        builder: (context, state) => const PrincipalScreen()),
+    GoRoute(
+        path: Routes.psicoList,
+        builder: (context, state) => const PsicoAvalibleScreen()),
+
+    //auth
+    GoRoute(
+        path: Routes.login, builder: (context, state) => const LoginScreen()),
+    GoRoute(
+        path: Routes.register,
+        builder: (context, state) => const RegisterScreen()),
+
+    //chats
+    GoRoute(
+        path: Routes.chatRoomList,
+        builder: (context, state) => const ChatRoomList()),
+    GoRoute(path: Routes.chat, builder: (context, state) => const ChatScreen()),
+    GoRoute(
+        path: Routes.chatAI, builder: (context, state) => const ChatScreenAI()),
+
+    //settings
+    GoRoute(
+        path: Routes.settingsScreen,
+        builder: (context, state) => const SettingsScreen()),
+    GoRoute(
+        path: Routes.profileSettings,
+        builder: (context, state) => const PsicoAvalibleScreen()),
+    GoRoute(
+        path: Routes.settings,
+        builder: (context, state) => const SettingsScreen()),
+    GoRoute(
+        path: Routes.helpSettings,
+        builder: (context, state) => const HelpSettingsScreen()),
+    GoRoute(
+        path: Routes.languageSettings,
+        builder: (context, state) => const LanguageSettingsScreen()),
+    GoRoute(
+        path: Routes.privacySettings,
+        builder: (context, state) => const PrivacySettingsScreen()),
+    GoRoute(
+        path: Routes.notificationSettings,
+        builder: (context, state) => const NotificacionSettingsScreen()),
+
+    //institution
+    GoRoute(
+        path: Routes.institutionScreen,
+        builder: (context, state) => const InstitutionScreen()),
+    GoRoute(
+        path: Routes.institutionProfile,
+        builder: (context, state) => const InstitutionProfile()),
+
+    //profile
+    GoRoute(
+        path: Routes.profile,
+        builder: (context, state) => const ProfileScreen()),
+    GoRoute(
+        path: Routes.psicoProfile,
+        builder: (context, state) => const PsicoProfileScreen()),
+
+    //schedule
+    GoRoute(
+        path: Routes.scheduleAppointment,
+        builder: (context, state) => const ScheduleAppointmentScreen()),
+
+    //intro
+    GoRoute(
+        path: Routes.information,
+        builder: (context, state) => const Aclaraciones()),
+    GoRoute(
+        path: Routes.information,
+        builder: (context, state) => const Bienvenida()),
+    GoRoute(
+        path: Routes.information,
+        builder: (context, state) => const InformationPage()),
+    GoRoute(
+        path: Routes.information,
+        builder: (context, state) => const IntroductionScreen()),
+    GoRoute(
+        path: Routes.information,
+        builder: (context, state) => const TerminosCondiciones()),
+  ],
+);

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mindwell/routes/routes.dart';
+import 'package:go_router/go_router.dart';
+import 'package:mindwell/routes/app_routes.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -19,7 +20,7 @@ class SettingsScreen extends StatelessWidget {
                 leading: const Icon(Icons.person),
                 subtitle: const Text('Ver y editar perfil'),
                 onTap: () {
-                  Navigator.pushNamed(context, Routes.profile);
+                  context.push(Routes.profileSettings);
                 },
               ),
               ListTile(
@@ -27,7 +28,7 @@ class SettingsScreen extends StatelessWidget {
                 leading: const Icon(Icons.notifications),
                 subtitle: const Text('Configurar notificaciones'),
                 onTap: () {
-                  Navigator.pushNamed(context, Routes.notificationSettings);
+                  context.push(Routes.notificationSettings);
                 },
               ),
               ListTile(
@@ -35,7 +36,7 @@ class SettingsScreen extends StatelessWidget {
                 leading: const Icon(Icons.language),
                 subtitle: const Text('Cambiar idioma'),
                 onTap: () {
-                  Navigator.pushNamed(context, Routes.languageSettings);
+                  context.push(Routes.languageSettings);
                 },
               ),
               ListTile(
@@ -43,7 +44,7 @@ class SettingsScreen extends StatelessWidget {
                 leading: const Icon(Icons.privacy_tip),
                 subtitle: const Text('Configurar privacidad'),
                 onTap: () {
-                  Navigator.pushNamed(context, Routes.privacySettings);
+                  context.push(Routes.privacySettings);
                 },
               ),
               ListTile(
@@ -51,7 +52,7 @@ class SettingsScreen extends StatelessWidget {
                 leading: const Icon(Icons.help),
                 subtitle: const Text('Centro de ayuda'),
                 onTap: () {
-                  Navigator.pushNamed(context, Routes.help);
+                  context.push(Routes.helpSettings);
                 },
               ),
               const ListTile(
