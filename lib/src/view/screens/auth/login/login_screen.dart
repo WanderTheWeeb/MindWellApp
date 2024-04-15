@@ -23,6 +23,27 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Future<void> _signIn() async {
+      try {
+        await supabase.auth.signInWithPassword(
+          email: _emailController.text,
+          password: _passwordController.text,
+        );
+      } on AuthException catch (error) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(error.message),
+          ),
+        );
+      } catch (_) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Error desconocido'),
+          ),
+        );
+      }
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Iniciar sesión"),
@@ -50,36 +71,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 const SizedBox(height: 16),
                 ElevatedButton(
-                  onPressed: () async {
-                    try {
-                      final email = _emailController.text.trim();
-                      await supabase.auth.signInWithPassword(
-                        email: email,
-                        password: _passwordController.text,
-                      );
-                      if (mounted) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text(
-                                'Revisa tu correo para verificar tu cuenta'),
-                          ),
-                        );
-                      }
-                    } on AuthException catch (e) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text(e.message),
-                          backgroundColor: Theme.of(context).colorScheme.error,
-                        ),
-                      );
-                    } catch (e) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text('Error al iniciar sesión'),
-                          backgroundColor: Theme.of(context).colorScheme.error,
-                        ),
-                      );
-                    }
+                  onPressed: () {
+                    _signIn();
                   },
                   child: const Text('Iniciar Sesión'),
                 ),

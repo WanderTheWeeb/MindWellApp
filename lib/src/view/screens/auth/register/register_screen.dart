@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mindwell/main.dart';
-import 'package:supabase/supabase.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+
+import '../../../../../main.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -16,10 +17,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
 
   Future<void> _signUp() async {
-    final isValid = _formKey.currentState!.validate();
-    if (!isValid) {
-      return;
-    }
     final email = _emailController.text;
     final password = _passwordController.text;
     final username = _usernameController.text;
@@ -39,14 +36,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(error.message),
-          backgroundColor: Theme.of(context).colorScheme.error,
         ),
       );
     } catch (error) {
-      debugPrint(error.toString());
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('Error al registrar'),
+          content: Text('Error desconocido'),
         ),
       );
     }
@@ -111,7 +106,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
             const SizedBox(height: 16),
             ElevatedButton(
-              onPressed: _signUp,
+              onPressed: () {
+                _signUp();
+              },
               child: const Text('Regístrate'),
             ),
           ],
