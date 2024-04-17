@@ -8,18 +8,15 @@ class MindWell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      title: 'MindWell',
-      routerConfig: appRoutes,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSwatch(
-          primarySwatch: Colors.red,
-          accentColor: Colors.deepPurpleAccent,
-          brightness: Brightness.light,
-        ).copyWith(secondary: Colors.blueAccent),
-        )
-      );
-
-    
+        debugShowCheckedModeBanner: false,
+        title: 'MindWell',
+        routerConfig: appRoutes,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSwatch(
+            primarySwatch: Colors.green,
+            accentColor: Colors.white,
+            brightness: Brightness.light,
+          ).copyWith(secondary: Colors.blueAccent),
+        ));
   }
 }
