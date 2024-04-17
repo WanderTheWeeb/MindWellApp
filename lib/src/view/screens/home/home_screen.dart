@@ -31,20 +31,27 @@ class _HomeScreenState extends State<HomeScreen> {
               selectedIcon: Icon(Icons.home),
             ),
             NavigationDestination(
-              label: 'Psicólogos',
+              label: 'Edoardo',
               icon: Icon(Icons.psychology_alt_outlined),
               selectedIcon: Icon(Icons.psychology_alt),
             ),
             NavigationDestination(
-              label: 'Chat',
+              label: 'Chats',
               icon: Icon(Icons.chat_outlined),
               selectedIcon: Icon(Icons.chat),
             ),
             NavigationDestination(
-              label: 'Instituciones',
+              label: 'Institucion',
               icon: Icon(Icons.corporate_fare_outlined),
               selectedIcon: Icon(Icons.corporate_fare),
             ),
+
+            NavigationDestination(
+              label: 'Ayuda',
+              icon: Icon(Icons.corporate_fare_outlined),
+              selectedIcon: Icon(Icons.corporate_fare),
+            ),
+
           ],
           selectedIndex: currentPageIndex,
           onDestinationSelected: (int index) {
